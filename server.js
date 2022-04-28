@@ -31,6 +31,13 @@ app.get('/notes', (req,res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
+
+// get saved notes
+app.get('/api/notes', (req,res) => {
+    // read db.json file and return all saved notes as JSON
+    res.json(notes);
+});
+
 // get note by title
 app.get('/notes/:title', (req,res) => {
     const result = findByTitle(req.params.title, notes);
@@ -41,19 +48,15 @@ app.get('/notes/:title', (req,res) => {
     }
 });
 
-// get saved notes
-app.get('/api/notes', (req,res) => {
-    // read db.json file and return all saved notes as JSON
-    res.json(notes);
-});
-
+// add a new note
 app.post('/api/notes', (req,res) => {
     // receive new note to save, add to db.json, retun new note to client
     const note = createNewNote(req.body, notes);
     res.json(note);
     // find way to add unique id when saved (npm packages???)
-})
+});
 
+// get landing page
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
