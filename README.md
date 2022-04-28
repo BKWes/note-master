@@ -24,8 +24,9 @@ Use command npm install to install depended packages.
 ## Screenshot
 ![](public\assets\images\Screenshot.png)
 
-### Github repository
-[Note Master](https://github.com/BKWes/note-master)
+### Heroku Deployment
+[Note Master](https://note-master22.herokuapp.com/notes)
 
 ### Created By
 [Weston Barnes](https://github.com/BKWes)
+[Note Master Repository](https://github.com/BKWes/note-master)
