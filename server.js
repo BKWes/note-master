@@ -41,7 +41,7 @@ app.get('/notes/:title', (req,res) => {
     }
 });
 
-// get 
+// get saved notes
 app.get('/api/notes', (req,res) => {
     // read db.json file and return all saved notes as JSON
     res.json(notes);
@@ -51,7 +51,7 @@ app.post('/api/notes', (req,res) => {
     // receive new note to save, add to db.json, retun new note to client
     const note = createNewNote(req.body, notes);
     res.json(note);
-    // find way to ad dunique id when saved (npm packages???)
+    // find way to add unique id when saved (npm packages???)
 })
 
 app.get('/', (req,res) => {
